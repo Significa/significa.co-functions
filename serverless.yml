@@ -1,14 +1,24 @@
-service: api.significa.co
+service: significa-website-functions
 
 plugins:
   - serverless-dotenv-plugin
   - serverless-iam-roles-per-function
+  - serverless-domain-manager
 
 provider:
   name: aws
   runtime: nodejs12.x
   region: eu-west-1
   stage: prod
+
+custom:
+  customDomain:
+    domainName: api.significa.co
+    stage: prod
+    certificateName: api.significa.co
+    createRoute53Record: true
+    endpointType: 'regional'
+    securityPolicy: tls_1_2
 
 functions:
   enquiry:
