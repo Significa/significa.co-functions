@@ -1,4 +1,4 @@
-service: significa-website-functions
+service: api.significa.co
 
 plugins:
   - serverless-dotenv-plugin
