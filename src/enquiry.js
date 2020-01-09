@@ -76,6 +76,9 @@ module.exports.run = async (event, context, callback) => {
     .then(() => {
       return callback(null, {
         statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
         body: JSON.stringify({ message: 'Great success' }),
       })
     })

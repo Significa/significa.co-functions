@@ -39,6 +39,9 @@ module.exports.run = (event, context, callback) => {
     } else {
       callback(null, {
         statusCode: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
         body: JSON.stringify({ url: url }),
       })
     }
