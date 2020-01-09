@@ -3,7 +3,7 @@ const sendEmail = require('./sendEmail')
 
 module.exports.run = async (event, context, callback) => {
   const body = JSON.parse(event.body)
-  const { name, email, url, message, attachment, position } = body
+  const { name, email, portfolio, message, attachment, position } = body
 
   if (!name) {
     return callback(null, {
@@ -41,7 +41,7 @@ module.exports.run = async (event, context, callback) => {
         `Name: ${name}\n` +
         `Email: ${email}\n` +
         `Position: ${email}\n` +
-        `URL: ${url || 'n/a'}\n` +
+        `Portfolio: ${portfolio || 'n/a'}\n` +
         `Attachment: ${attachment || 'n/a'}\n` +
         `\n${message}`,
     }),
@@ -73,7 +73,7 @@ module.exports.run = async (event, context, callback) => {
               { title: 'Name', value: name, short: false },
               { title: 'Email', value: email, short: false },
               { title: 'Position', value: position, short: false },
-              { title: 'URL', value: url || 'n/a', short: false },
+              { title: 'Portfolio', value: portfolio || 'n/a', short: false },
               { title: 'Attachment', value: attachment || 'n/a', short: false },
               { title: 'Message', value: message || 'n/a', short: false },
             ],
