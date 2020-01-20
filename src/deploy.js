@@ -23,6 +23,7 @@ module.exports.run = async function(event, context, callback) {
       },
       json: true,
       body: {
+        // eslint-disable-next-line @typescript-eslint/camelcase
         event_type: 'update',
       },
     })
