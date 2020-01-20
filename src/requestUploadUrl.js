@@ -27,7 +27,7 @@ module.exports.run = (event, context, callback) => {
     ACL: 'public-read',
   }
 
-  const uploadURL = s3.getSignedUrl('putObject', config, (err, url) => {
+  s3.getSignedUrl('putObject', config, (err, url) => {
     if (err) {
       callback(null, {
         statusCode: 500,
