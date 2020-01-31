@@ -40,7 +40,7 @@ module.exports.run = async (event, context, callback) => {
       data:
         `Name: ${name}\n` +
         `Email: ${email}\n` +
-        `Position: ${email}\n` +
+        `Position: ${position}\n` +
         `Portfolio: ${portfolio || 'n/a'}\n` +
         `Attachment: ${attachment || 'n/a'}\n` +
         `\n${message}`,
